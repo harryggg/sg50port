@@ -1,0 +1,36 @@
+<table border="1">
+			<thead>
+				<tr>
+					<th>id</th>
+					<th>cruise name</th>
+					<th>customer name</th>
+					<th>departure time</th>
+					<th>checkin status</th>
+					<th>delete!</th>
+				</tr> 
+			</thead>
+			
+			<tbody>
+				{% for ticket in tickets %}
+					<tr>
+						<td>{{ticket.ticketid}}</td>
+						<td>{{ticket.name}}</td>
+						<td>{{ticket.customerName}}</td>
+						<td>{{ticket.departureTime.strftime("%d/%m/%Y %H:%M")}}</td>
+						<td>{{ticket.checkedin}}</td>
+						<td> <form action="/deleteTicket?ticketkey={{ ticket.key() }}" method="post">
+      							<div><input type="submit" value="Delete"></div>
+   							 </form></td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		<form action="/createTicket" method="post">
+			id:<input type="text" name="ticketid" /><br>
+			cruise name:<input type="text" name="name" /><br>
+			customer name:<input type="text" name="customerName" /><br>
+			departureTime(dd/mm/yyyy HH:MM):<input type="text" name="departureTime" /><br>
+			<input type="submit" value="create" />
+		</form>
+
+

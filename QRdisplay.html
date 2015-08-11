@@ -1,0 +1,10 @@
+{% if ticket %}
+qrcode:<h1>sg50port#{{ticket.ticketid}}</h1>
+please verify that this is indeed your ticket qr code
+customer name: {{ticket.customerName}}
+cruise name: {{ticket.name}}
+departure time: {{ticket.departureTime.strftime("%d/%m/%Y %H:%M")}}
+{% else %}
+the tickit id you input does not exist
+<a href="/customer">Try again </a>
+{% endif %}

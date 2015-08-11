@@ -1,0 +1,15 @@
+{% if ticket %}
+	{% if isValid %}
+		allow for express queue<br>
+		customer name: {{ticket.customerName}} <br>
+		cruise name: {{ticket.name}} <br>
+		ticketid: {{ticket.ticketid}} <br>
+	{% else %}
+		ticket has not been checked in in harbourfront<br>
+		not allowed for check in
+	{% endif %}
+{% else %}
+	ticket not exist
+{% endif %}
+<br>
+<a href="/expressPanel">Back</a>

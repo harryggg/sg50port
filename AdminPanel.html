@@ -1,0 +1,8 @@
+{% if isadmin %}
+	<a href="/createTicketPanel">dummy data</a><br>
+	<a href="/checkinPanel">checkin interface</a><br>
+	<a href="/expressPanel">express queue interface</a><br>
+{% else %}
+	you are not an admin or haven't signed in yet!<br>
+{% endif %}
+<a href="{{ urllink|safe }}">{{ linktext }}</a>

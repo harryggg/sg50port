@@ -1,0 +1,13 @@
+{% if ticket %}
+	{% if isValid %}
+		the ticket is valid for discount, please check the ticket info:<br>
+		customer name: {{ticket.customerName}} <br>
+		cruise name: {{ticket.name}} <br>
+		ticketid: {{ticket.ticketid}} <br>
+	{% else %}
+		ticket not valid for this period of time,it will be valid from:<br>
+		{{validFrom}} to {{validTo}}
+	{% endif %}
+{% else %}
+	ticket not exist
+{% endif %}
