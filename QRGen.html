@@ -1,0 +1,26 @@
+<html>
+	<header>
+	<script src="Scripts/jquery-2.1.4.min.js"></script>
+	<script src="Scripts/qrcode.min.js"></script>
+	<script> 
+		$(document).ready(function ()
+		{
+			var qrcode = new QRCode("qrcode", 	// Id to replace
+				{
+					text: "KEN SAMA",			// Text in code
+					width: 256,					// Width 
+					height: 256,				// Height
+					colorDark: "black",			// Default black, dont change, dont seem to be readable if i change to other colour for my phone
+					colorLight: "white",		// Default white
+					correctLevel: QRCode.CorrectLevel.H		// ECC level. Higher = more data, but we can afford to have it. Ref http://www.qrstuff.com/blog/2011/12/14/qr-code-error-correction
+			});
+		
+		});
+	</script>
+</header>
+<body>
+	<p>QR Code izt below.</p>
+	<div id="qrcode"></div>
+	<p>QR Code izt above.</p>
+</body>
+</html>
